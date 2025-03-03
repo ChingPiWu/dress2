@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能衣櫥 - Smartfit</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        nav button.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>智能衣櫥 - Smartfit</h1>
+    </header>
+
+    <nav>
+        <button id="btn-weather" class="active">天氣穿搭</button>
+        <button id="btn-personal">個人衣櫥</button>
+        <button id="btn-database">資料庫衣櫥</button>
+        <button id="btn-outfit">我的搭配</button>
+    </nav>
+
+    <main>
+        <!-- 天氣穿搭頁面 -->
+        <div id="weather-tab" class="tab-content active">
+            <div class="container">
+                <h2>天氣穿搭推薦</h2>
+                <form action="./05.html" method="GET">
+                    <div class="form-group">
+                        <label for="name">姓名：</label>
+                        <input type="text" id="name" name="name" placeholder="輸入您的姓名" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="region">地區：</label>
+                        <select id="region" name="region">
+                            <option value="">選擇您的地區</option>
+                            <option value="臺北市">臺北市</option>
+                            <option value="新北市">新北市</option>
+                            <option value="基隆市">基隆市</option>
+                            <option value="桃園市">桃園市</option>
+                            <option value="新竹市">新竹市</option>
+                            <option value="新竹縣">新竹縣</option>
+                            <option value="苗栗縣">苗栗縣</option>
+                            <option value="臺中市">臺中市</option>
+                            <option value="彰化縣">彰化縣</option>
+                            <option value="南投縣">南投縣</option>
+                            <option value="雲林縣">雲林縣</option>
+                            <option value="嘉義市">嘉義市</option>
+                            <option value="嘉義縣">嘉義縣</option>
+                            <option value="臺南市">臺南市</option>
+                            <option value="高雄市">高雄市</option>
+                            <option value="屏東縣">屏東縣</option>
+                            <option value="宜蘭縣">宜蘭縣</option>
+                            <option value="花蓮縣">花蓮縣</option>
+                            <option value="臺東縣">臺東縣</option>
+                            <option value="澎湖縣">澎湖縣</option>
+                            <option value="金門縣">金門縣</option>
+                            <option value="連江縣">連江縣</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="age">年齡：</label>
+                        <input type="number" id="age" name="age" placeholder="輸入您的年齡" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">性別：</label>
+                        <select id="gender" name="gender">
+                            <option value="">選擇您的性別</option>
+                            <option value="男">男</option>
+                            <option value="女">女</option>
+                            <option value="其他">其他</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="zodiac">星座：</label>
+                        <select id="zodiac" name="zodiac">
+                            <option value="">選擇您的星座</option>
+                            <option value="牡羊座">牡羊座</option>
+                            <option value="金牛座">金牛座</option>
+                            <option value="雙子座">雙子座</option>
+                            <option value="巨蟹座">巨蟹座</option>
+                            <option value="獅子座">獅子座</option>
+                            <option value="處女座">處女座</option>
+                            <option value="天秤座">天秤座</option>
+                            <option value="天蠍座">天蠍座</option>
+                            <option value="射手座">射手座</option>
+                            <option value="魔羯座">魔羯座</option>
+                            <option value="水瓶座">水瓶座</option>
+                            <option value="雙魚座">雙魚座</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="event">計畫活動：</label>
+                        <select id="event" name="event">
+                            <option value="">選擇您的活動</option>
+                            <option value="上班">上班</option>
+                            <option value="正式場合">正式場合</option>
+                            <option value="約會">約會</option>
+                            <option value="日常">日常</option>
+                        </select>
+                    </div>
+
+                    <!-- 新增按鈕 -->
+                    <button type="button" id="btn-get-from-wardrobe">從我的衣櫥獲取服裝</button>
+                    <button type="button" id="btn-get-from-database">從資料庫衣櫥獲取服裝</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- 個人衣櫥頁面 -->
+        <div id="personal-tab" class="tab-content">
+            <h2>我的衣櫥</h2>
+            <button id="btn-add-item">創建新搭配</button>
+            <div id="wardrobe-content">
+                <!-- 這裡的內容會根據按鈕點擊顯示 -->
+                <p>這是您的個人衣櫥內容。</p>
+            </div>
+        </div>
+
+        <!-- 資料庫衣櫥頁面 -->
+        <div id="database-tab" class="tab-content">
+            <h2>資料庫衣櫥</h2>
+            <p>這是資料庫衣櫥內容。</p>
+        </div>
+
+        <!-- 我的搭配頁面 -->
+        <div id="outfit-tab" class="tab-content">
+            <h2>我的搭配</h2>
+            <p>這是我的搭配頁面內容。</p>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
