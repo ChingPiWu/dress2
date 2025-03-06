@@ -78,8 +78,6 @@
                     <option value="日常">日常</option>
                 </select>
                 <button type="button" id="btn-get-from-wardrobe">從我的衣櫥獲取服裝</button>
-                
-                <button type="button" id="btn-get-from-database">從資料庫衣櫥獲取服裝</button>
             </form>
         </div>
 
@@ -88,20 +86,22 @@
             <h2>我的衣櫥</h2>
 
             <!-- 圖片上傳 -->
+            
+            <label for="fileInput" class="file-upload-btn">
+                創建新搭配
+            </label>
             <input type="file" id="fileInput" accept="image/*" hidden>
-            <label for="fileInput" class="file-upload-btn">創建新搭配</label>
-            <div id="predictionResult"></div>
-
+            <div id="fileName">尚未選擇檔案</div>
 
             <!-- 圖片預覽 -->
             <div id="imagePreviewContainer" style="display: none;">
                 <h3>預覽圖片:</h3>
                 <img id="imagePreview" src="" alt="圖片預覽" style="max-width: 200px;">
-                <div id="resultContainer" style="display: none; margin-bottom: 10px;"></div>
             </div>
 
             <!-- 上傳圖片並獲取推薦 -->
             <button id="uploadButton">上傳並獲取推薦</button>
+            <p id="predictionResult">尚未預測</p>
             <div id="wardrobe-content">
                 <p>這是您的個人衣櫥內容。</p>
             </div>
@@ -123,4 +123,3 @@
     </main>
     <script src="script.js"></script>
 </body>
-</html>
